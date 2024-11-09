@@ -10,21 +10,18 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   const navigation = useNavigation();
   const route = useRoute();
-  const flatListRef = useRef(null); // Ref para o FlatList
+  const flatListRef = useRef(null);
 
-  // Carrega os produtos do AsyncStorage ao montar o componente
   useEffect(() => {
     loadProducts();
   }, []);
 
-  // Efeito para receber novos produtos da tela Usuarios
   useEffect(() => {
     if (route.params?.newProducts) {
       setProducts((prevProducts) => [...prevProducts, ...route.params.newProducts]);
     }
   }, [route.params?.newProducts]);
 
-  // Função para carregar os produtos do AsyncStorage
   const loadProducts = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('@user_products');
@@ -69,24 +66,32 @@ const Home = () => {
     setActiveIndex(currentIndex);
   };
 
-  // Efeito para rolar automaticamente o carrossel
   useEffect(() => {
     const interval = setInterval(() => {
       const nextIndex = (activeIndex + 1) % carouselData.length;
       setActiveIndex(nextIndex);
       flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
-    }, 3000); // Intervalo de 3 segundos para trocar as imagens
+    }, 3000);
 
-    return () => clearInterval(interval); // Limpa o intervalo quando o componente é desmontado
+    return () => clearInterval(interval);
   }, [activeIndex]);
 
-  // Renderiza cada produto
+  const handleBuy = (item) => {
+    console.log(`Produto ${item.name} comprado!`);
+    // Navega para a tela 'Sacola' e passa o produto e a imagem
+    navigation.navigate('Sacola', { selectedProduct: item });
+  };  
+  
+
   const renderProductItem = ({ item }) => (
     <View style={styles.productContainer}>
       <Image source={{ uri: item.image }} style={styles.productImage} />
       <Text style={styles.productName}>{item.name}</Text>
       <Text style={styles.productDescription}>{item.description}</Text>
       <Text style={styles.productValue}>R$ {item.value}</Text>
+      <TouchableOpacity style={styles.buyButton} onPress={() => handleBuy(item)}>
+        <Text style={styles.buyButtonText}>Comprar</Text>
+      </TouchableOpacity>
     </View>
   );
 
@@ -114,7 +119,7 @@ const Home = () => {
       <Text style={styles.title}>Heróis, vilões, lendas e mitos. Quem você será hoje</Text>
 
       <FlatList
-        ref={flatListRef} // Conecta a FlatList ao useRef
+        ref={flatListRef}
         data={carouselData}
         renderItem={renderCarouselItem}
         keyExtractor={(item) => item.id}
@@ -191,7 +196,6 @@ const styles = StyleSheet.create({
     height: 250,
     marginRight: 20,
     borderRadius: 10,
-
   },
   indicatorContainer: {
     flexDirection: 'row',
@@ -220,6 +224,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 60,
     marginBottom: 10,
+    alignItems: 'center',
   },
   productImage: {
     width: '100%',
@@ -238,6 +243,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#4A3FAB',
+  },
+  buyButton: {
+    backgroundColor: '#38a69d',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 10,
+    width: '100%',
+    alignItems: 'center',
+  },
+  buyButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
 
