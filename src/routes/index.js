@@ -13,6 +13,8 @@ import Sacola from '../pages/Sacola';
 import Cadastros from '../pages/Cadastros';
 import WelcomeUser from '../pages/WelcomeUser';
 import Publicacoes from '../pages/Publicacoes';
+import ConfirmacaoPedido from '../pages/ConfirmacaoPedido';
+import Concluido from '../pages/Concluido';
 
 // Criar navegadores
 const Tab = createBottomTabNavigator();
@@ -62,7 +64,8 @@ export default function Routes() {
       <Stack.Screen name="Cadastros" component={Cadastros} />
       <Stack.Screen name="WelcomeUser" component={WelcomeUser} />
       <Stack.Screen name="Publicacoes" component={Publicacoes} />
-
+      <Stack.Screen name="ConfirmacaoPedido" component={ConfirmacaoPedido} />
+      <Stack.Screen name="Concluido" component={Concluido} />
 
     </Stack.Navigator>
   );

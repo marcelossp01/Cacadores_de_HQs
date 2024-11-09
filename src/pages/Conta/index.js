@@ -95,10 +95,11 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   button: {
-    backgroundColor: '#4A3FAB',
+    backgroundColor: '#38a69d',
     width: '100%',
-    borderRadius: 4,
-    paddingVertical: 15,
+    borderRadius: 5,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     marginTop: 40,  // Reduzido para deixar mais próximo ao campo de login
     justifyContent: 'center',
     alignItems: 'center',

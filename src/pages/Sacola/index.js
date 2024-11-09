@@ -22,7 +22,93 @@ export default function Sacola() {
         return prevItems;
       });
     }
-  }, [selectedProduct]); // Removido [selectedPro]
+  }, [selectedProduct]);
+
+{items.length > 0 ? (
+  items.map((item, index) => (
+    <View key={item.id || index} style={styles.itemContainer}> {/* Usando item.id ou index como fallback */}
+      <Image source={{ uri: item.image }} style={styles.productImage} />
+      <View style={styles.itemDetails}>
+        <Text style={styles.productName}>{item.name}</Text>
+        <Text style={styles.productValue}>
+          R$ {item.value && !isNaN(item.value) ? item.value.toFixed(2) : '0.00'}
+        </Text>
+      </View>
+      <View style={styles.quantityControls}>
+        <TouchableOpacity onPress={() => decreaseQuantity(item.id)} style={styles.button}>
+          <Text style={styles.buttonText}>-</Text>
+        </TouchableOpacity>
+        <TextInput 
+          style={styles.quantityInput} 
+          value={String(item.quantity)} 
+          editable={false} 
+        />
+        <TouchableOpacity onPress={() => increaseQuantity(item.id)} style={styles.button}>
+          <Text style={styles.buttonText}>+</Text>
+        </TouchableOpacity>
+      </View>
+      <TouchableOpacity onPress={() => removeItem(item.id)} style={styles.deleteButton}>
+        <Text style={styles.deleteButtonText}>🗑️</Text>
+      </TouchableOpacity>
+    </View>
+  ))
+) : (
+  <>
+    <View style={styles.iconContainer}>
+      <Image 
+        source={require('../../../assets/Diversos/Sacola.png')}
+        style={styles.icon}
+      />
+    </View>
+    <Text style={styles.emptyCartText}>Seu carrinho está vazio</Text>
+    <Text style={styles.descriptionText}>
+      Navegue pelo aplicativo ou faça uma busca para encontrar seus produtos
+    </Text>
+  </>
+)}
+
+{items.length > 0 ? (
+  items.map((item, index) => (
+    <View key={item.id || index} style={styles.itemContainer}> {/* Usando item.id ou index como fallback */}
+      <Image source={{ uri: item.image }} style={styles.productImage} />
+      <View style={styles.itemDetails}>
+        <Text style={styles.productName}>{item.name}</Text>
+        <Text style={styles.productValue}>
+          R$ {item.value && !isNaN(item.value) ? item.value.toFixed(2) : '0.00'}
+        </Text>
+      </View>
+      <View style={styles.quantityControls}>
+        <TouchableOpacity onPress={() => decreaseQuantity(item.id)} style={styles.button}>
+          <Text style={styles.buttonText}>-</Text>
+        </TouchableOpacity>
+        <TextInput 
+          style={styles.quantityInput} 
+          value={String(item.quantity)} 
+          editable={false} 
+        />
+        <TouchableOpacity onPress={() => increaseQuantity(item.id)} style={styles.button}>
+          <Text style={styles.buttonText}>+</Text>
+        </TouchableOpacity>
+      </View>
+      <TouchableOpacity onPress={() => removeItem(item.id)} style={styles.deleteButton}>
+        <Text style={styles.deleteButtonText}>🗑️</Text>
+      </TouchableOpacity>
+    </View>
+  ))
+) : (
+  <>
+    <View style={styles.iconContainer}>
+      <Image 
+        source={require('../../../assets/Diversos/Sacola.png')}
+        style={styles.icon}
+      />
+    </View>
+    <Text style={styles.emptyCartText}>Seu carrinho está vazio</Text>
+    <Text style={styles.descriptionText}>
+      Navegue pelo aplicativo ou faça uma busca para encontrar seus produtos
+    </Text>
+  </>
+)}
 
   const increaseQuantity = (id) => {
     setItems(items.map(item => 
@@ -42,6 +128,14 @@ export default function Sacola() {
 
   const getTotalPrice = () => {
     return items.reduce((total, item) => total + (Number(item.value) || 0) * item.quantity, 0).toFixed(2);
+  };
+
+  const handleCloseOrder = () => {
+    if (items.length) {
+      navigation.navigate('ConfirmacaoPedido', { total: getTotalPrice() });
+    } else {
+      navigation.navigate('Home');
+    }
   };
 
   return (
@@ -97,7 +191,7 @@ export default function Sacola() {
 
       <TouchableOpacity 
         style={styles.button} 
-        onPress={() => items.length ? console.log("Pedido fechado") : navigation.navigate('Home')}
+        onPress={handleCloseOrder}
       >
         <Text style={styles.buttonText}>{items.length ? "Fechar Pedido" : "Escolher produtos"}</Text>
       </TouchableOpacity>
