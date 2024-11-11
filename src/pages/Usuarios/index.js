@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#4A3FAB',
+    backgroundColor: '#38a69d',
     padding: 15,
     borderRadius: 5,
     alignItems: 'center',
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   imageButton: {
-    backgroundColor: '#999',
+    backgroundColor: '#38a69d',
     padding: 15,
     borderRadius: 5,
     alignItems: 'center',
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     color: '#4A3FAB',
   },
   deleteButton: {
-    backgroundColor: '#FF6347',
+    backgroundColor: '#38a69d',
     padding: 10,
     borderRadius: 5,
     marginTop: 10,

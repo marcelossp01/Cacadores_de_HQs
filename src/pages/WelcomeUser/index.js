@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native'; // Importar o hook de 
 
 export default function WelcomeUser() {
   const navigation = useNavigation(); // Acessar o navigation
-  
+
   return (
     <View style={styles.container}>
       {/* Logotipo no topo */}
@@ -27,14 +27,14 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     alignItems: 'center',
-    justifyContent: 'flex-start',  
+    justifyContent: 'flex-start',
     backgroundColor: '#F0F0F5',
   },
   logo: {
     width: 150,
     height: 150,
-    marginTop: -50,  
-    marginBottom: 20, 
+    marginTop: -50,
+    marginBottom: 20,
   },
   text: {
     fontSize: 18,
