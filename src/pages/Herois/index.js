@@ -6,37 +6,37 @@ const products = [
     id: '1',
     name: 'X-Men #55 Agosto 96 Edição Americana',
     price: 'R$ ,00',
-    image: require('../../../assets/herois/x-men_#55_agosto_96_edição_americana.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/herois/x-men_#55_agosto_96_edição_americana.png'),
   },
   {
     id: '2',
     name: 'Almanaque do Homem Aranha 1976',
     price: 'R$ ,00',
-    image: require('../../../assets/herois/Almanaque_do_Homem_Aranha_1976.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/herois/Almanaque_do_Homem_Aranha_1976.png'), 
   },
   {
     id: '3',
     name: 'Super-Homem - 1ª Série # 014',
     price: 'R$ ,00',
-    image: require('../../../assets/herois/SuperHomem1ªSerie#014.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/herois/SuperHomem1ªSerie#014.png'), 
   },
   {
     id: '4',
     name: 'Super Powers # 27',
     price: 'R$ ,00',
-    image: require('../../../assets/herois/SuperPowers#27.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/herois/SuperPowers#27.png'), 
   },
   {
     id: '5',
     name: 'Hulk Contra o Mundo # 3',
     price: 'R$ ,00',
-    image: require('../../../assets/herois/HulkContraoMundo#3.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/herois/HulkContraoMundo#3.png'), 
   },
   {
     id: '6',
     name: 'Batman e Mulher-Gato - Rastro de Pólvora # 1',
     price: 'R$ ,00',
-    image: require('../../../assets/herois/BatmaneMulherGatoRastrodePolvora#1.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/herois/BatmaneMulherGatoRastrodePolvora#1.png'), 
   },
 ];
 

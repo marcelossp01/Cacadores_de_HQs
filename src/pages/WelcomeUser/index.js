@@ -27,14 +27,14 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     alignItems: 'center',
-    justifyContent: 'flex-start',  // Deixa os itens no topo
+    justifyContent: 'flex-start',  
     backgroundColor: '#F0F0F5',
   },
   logo: {
     width: 150,
     height: 150,
-    marginTop: -50,  // Logotipo mais próximo do topo
-    marginBottom: 20,  // Espaçamento entre o logo e o texto
+    marginTop: -50,  
+    marginBottom: 20, 
   },
   text: {
     fontSize: 18,

@@ -16,8 +16,7 @@ export default function ConfirmacaoPedido() {
 
   // Função para concluir o pedido
   const handleCloseOrder = () => {
-    // Aqui você pode adicionar a lógica de navegação dependendo de outras condições
-    navigation.navigate('Concluido', { total: 'Valor do Pedido' }); // Substitua 'Valor do Pedido' conforme necessário
+    navigation.navigate('Concluido', { total: 'Valor do Pedido' }); 
   };
 
   return (

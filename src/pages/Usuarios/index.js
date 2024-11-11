@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, FlatList, Alert } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import AsyncStorage from '@react-native-async-storage/async-storage'; // Importando AsyncStorage
-import { useNavigation } from '@react-navigation/native'; // Importando useNavigation
+import AsyncStorage from '@react-native-async-storage/async-storage'; 
+import { useNavigation } from '@react-navigation/native'; 
 
 export default function Usuarios() {
   const navigation = useNavigation(); // Hook de navegação

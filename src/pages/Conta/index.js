@@ -48,7 +48,7 @@ export default function Conta() {
       {/* Entrar com e-mail */}
       <View style={styles.formContainer}>
         <Text style={styles.formTitle}>Já sou Cadastrado</Text>
-        
+
         <TextInput
           style={styles.input}
           placeholder="Digite seu e-mail"
@@ -56,7 +56,7 @@ export default function Conta() {
           value={email}
           onChangeText={setEmail}
         />
-        
+
         <TextInput
           style={styles.input}
           placeholder="Digite sua senha"

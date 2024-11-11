@@ -6,37 +6,37 @@ const products = [
     id: '1',
     name: 'Chainsaw Man #02',
     price: 'R$ ,00',
-    image: require('../../../assets/mangas/ChainsawMan#02.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/mangas/ChainsawMan#02.png'),
   },
   {
     id: '2',
     name: 'Chainsaw Man #04',
     price: 'R$ ,00',
-    image: require('../../../assets/mangas/ChainsawMan#04.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/mangas/ChainsawMan#04.png'), 
   },
   {
     id: '3',
     name: 'Demon Slayer Kimetsu No Yaiba #03',
     price: 'R$ ,00',
-    image: require('../../../assets/mangas/DemonSlayerKimetsuNoYaiba#03.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/mangas/DemonSlayerKimetsuNoYaiba#03.png'), 
   },
   {
     id: '4',
     name: 'Solo Leveling #1',
     price: 'R$ ,00',
-    image: require('../../../assets/mangas/SoloLeveling#1.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/mangas/SoloLeveling#1.png'), 
   },
   {
     id: '5',
     name: 'Pokemon Yellow #1',
     price: 'R$ ,00',
-    image: require('../../../assets/mangas/PokemonYellow#1.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/mangas/PokemonYellow#1.png'), 
   },
   {
     id: '6',
     name: 'Pokémon - Yellow # 2',
     price: 'R$ ,00',
-    image: require('../../../assets/mangas/PokemonYellow#2.png'), // Adicione a imagem correspondente
+    image: require('../../../assets/mangas/PokemonYellow#2.png'), 
   },
 ];
 

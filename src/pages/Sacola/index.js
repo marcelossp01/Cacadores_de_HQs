@@ -199,7 +199,6 @@ export default function Sacola() {
   );
 }
 
-// Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
